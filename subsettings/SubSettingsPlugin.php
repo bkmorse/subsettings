@@ -73,7 +73,7 @@ class SubSettingsPlugin extends BasePlugin
         {
             foreach($settings as $key => $value)
             {
-                $nav[$value['icon']] = array('label' => $value['label'], 'url' => 'settings/'.$key);
+                $nav[$key] = array('label' => $value['label'], 'url' => 'settings/'.$key);
             }
         }
     }    
