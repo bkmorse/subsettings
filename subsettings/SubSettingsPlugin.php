@@ -61,6 +61,7 @@ class SubSettingsPlugin extends BasePlugin
     // HOOKS
     // =========================================================================
 
+
     public function modifyCpNav(&$nav)
     {
         if (!craft()->userSession->isAdmin())
@@ -69,11 +70,12 @@ class SubSettingsPlugin extends BasePlugin
         $cpvariable = new CpVariable;
         $category_settings = $cpvariable->settings();
 
-        foreach($category_settings as $settings)
+        foreach($category_settings as $ckey => $cvalue)
         {
-            foreach($settings as $key => $value)
+            foreach($cvalue as $key => $value)
             {
-                $nav[$key] = array('label' => $value['label'], 'url' => 'settings/'.$key);
+                if ($ckey != "Plugins")
+                    $nav[$key] = array('label' => $value['label'], 'url' => 'settings/'.$key);
             }
         }
     }    
