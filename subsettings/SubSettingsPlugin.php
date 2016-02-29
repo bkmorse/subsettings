@@ -75,7 +75,7 @@ class SubSettingsPlugin extends BasePlugin
             foreach($cvalue as $key => $value)
             {
                 if ($ckey != "Plugins")
-                    $nav[$key] = array('label' => $value['label'], 'url' => 'settings/'.$key);
+                    $nav[$key.'settings'] = array('label' => $value['label'], 'url' => 'settings/'.$key);
             }
         }
     }    
